@@ -1,4 +1,4 @@
-# ArteLocal · Tienda web de artesanía local
+# LaCandela - Artesania y regalos Córdoba · Tienda web de artesanía local
 
 Proyecto del módulo **Entornos de Desarrollo** · 1.º CFGS Desarrollo de Aplicaciones Web · IES Fidiana (Córdoba) · Curso 2026–2027
 
