@@ -1,4 +1,4 @@
-# La Candela Online · Tienda web de artesanía y regalos de Córdoba
+# LaCandela - Artesania y regalos Córdoba · Tienda web de artesanía y regalos de Córdoba
 
 Proyecto del módulo **Entornos de Desarrollo** · 1.º CFGS Desarrollo de Aplicaciones Web · IES Fidiana (Córdoba) · Curso 2026–2027
 
