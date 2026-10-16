@@ -2,13 +2,13 @@
 
 Proyecto del módulo **Entornos de Desarrollo** · 1.º CFGS Desarrollo de Aplicaciones Web · IES Fidiana (Córdoba) · Curso 2026–2027
 
-🌐 **Web publicada:** https://TU-USUARIO.github.io/artelocal-web/
+🌐 **Web publicada:** 
 
 ---
 
-## ¿Qué es ArteLocal?
+## ¿Qué es LaCandela - Artesania y regalos Córdoba?
 
-ArteLocal es una tienda web pensada para un pequeño comercio de artesanía local. Permite que los clientes conozcan las piezas del taller (cerámica, cuero, joyería…) y que la tienda pueda mostrar su catálogo por internet.
+LaCandela es una tienda web pensada para un pequeño comercio de artesanía local. Permite que los clientes conozcan las piezas del taller (cerámica, cuero, joyería…) y que la tienda pueda mostrar su catálogo por internet.
 
 - **¿Quién la utiliza?** Clientes que quieren comprar artesanía local y la persona responsable de la tienda.
 - **¿Qué necesidad resuelve?** Que un comercio pequeño pueda vender sus piezas online sin necesitar conocimientos técnicos.
