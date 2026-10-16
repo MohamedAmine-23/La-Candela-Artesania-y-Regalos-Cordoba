@@ -2,7 +2,7 @@
 
 Proyecto del módulo **Entornos de Desarrollo** · 1.º CFGS Desarrollo de Aplicaciones Web · IES Fidiana (Córdoba) · Curso 2026–2027
 
-🌐 **Web publicada:** https://TU-USUARIO.github.io/la-candela-web/
+🌐 **Web publicada:** 
 
 ---
 
