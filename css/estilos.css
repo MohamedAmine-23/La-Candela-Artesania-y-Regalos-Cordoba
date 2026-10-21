@@ -314,3 +314,193 @@ a { color: var(--anil); }
   background: var(--papel);
   border: 1px solid var(--borde);
 }
+
+/* ---------- Utilidades ---------- */
+[hidden] { display: none !important; }
+
+button.boton {
+  border: 0;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.boton[disabled],
+.boton[disabled]:hover {
+  background: var(--suave);
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.carrito-contador {
+  display: inline-block;
+  min-width: 1.5em;
+  margin-left: 0.4rem;
+  padding: 0 0.4em;
+  background: var(--anil);
+  color: var(--papel);
+  border-radius: 1em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+}
+
+.enlace-boton {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--anil);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ---------- Ficha de producto ---------- */
+.volver { margin: 0 0 1.25rem; }
+
+.ficha { max-width: 42rem; }
+
+.galeria-principal {
+  background: var(--papel);
+  border: 1px solid var(--borde);
+}
+.ficha-foto {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.foto-grande { border-bottom: 0; font-size: 1.1rem; }
+
+.galeria-miniaturas { display: flex; gap: 0.6rem; margin-top: 0.6rem; }
+.miniatura {
+  width: 5rem;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  overflow: hidden;
+  background: var(--papel);
+  color: var(--suave);
+  border: 2px solid var(--borde);
+  font: inherit;
+  cursor: pointer;
+}
+.miniatura img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.miniatura[aria-pressed="true"] { border-color: var(--anil); color: var(--tinta); font-weight: 600; }
+
+.ficha-info { margin-top: 1.5rem; }
+.ficha-categoria { margin: 0 0 0.25rem; color: var(--suave); font-size: 0.95rem; }
+.ficha-info h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.15;
+}
+.ficha-datos { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1rem; }
+.precio-grande { font-size: 1.6rem; }
+.ficha-descripcion { max-width: 36rem; margin: 0 0 1.5rem; }
+.ficha-aviso { min-height: 1.6em; margin: 1rem 0 0; }
+
+/* ---------- Carrito ---------- */
+.carrito-layout { display: grid; gap: 2rem; }
+@media (min-width: 56rem) {
+  .carrito-layout { grid-template-columns: 1fr 22rem; align-items: start; }
+}
+
+.carrito-lineas { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--borde); }
+.linea {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0.5rem 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--borde);
+}
+.linea-foto { width: 5.5rem; aspect-ratio: 4 / 3; object-fit: cover; border: 1px solid var(--borde); }
+.foto-mini { width: 5.5rem; font-size: 0.75rem; border: 1px solid var(--borde); }
+.linea-info h3 { margin: 0 0 0.15rem; font-size: 1.05rem; font-weight: 600; line-height: 1.3; }
+.linea-info a { color: var(--tinta); }
+.linea-unitario { margin: 0; color: var(--suave); font-size: 0.95rem; }
+.linea-controles {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
+}
+.cantidad { display: inline-flex; align-items: center; border: 1px solid var(--suave); }
+.cantidad button {
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.cantidad button:disabled { opacity: 0.35; cursor: not-allowed; }
+.cantidad-valor { min-width: 2.2rem; text-align: center; font-weight: 600; }
+.linea-total { margin-left: auto; font-weight: 600; }
+
+/* ---------- Panel de resumen, entrega y totales ---------- */
+.panel { padding: 1.25rem; background: var(--papel); border: 1px solid var(--borde); }
+.panel h2 { margin: 0 0 1rem; font-size: 1.25rem; font-weight: 600; }
+
+.entrega { margin: 0 0 1.25rem; padding: 0; border: 0; }
+.entrega legend { margin-bottom: 0.5rem; padding: 0; font-weight: 600; }
+.opcion {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin-bottom: 0.5rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--borde);
+  cursor: pointer;
+}
+.opcion input { margin-top: 0.35rem; accent-color: var(--anil); }
+.opcion:has(input:checked) { border-color: var(--anil); background: #fff; }
+
+.totales { margin: 0 0 1.25rem; }
+.totales > div { display: flex; justify-content: space-between; gap: 1rem; padding: 0.3rem 0; }
+.totales dt { color: var(--suave); }
+.totales dd { margin: 0; font-weight: 600; text-align: right; }
+.totales .total-final { margin-top: 0.4rem; padding-top: 0.7rem; border-top: 1px solid var(--borde); font-size: 1.2rem; }
+.totales .total-final dt { color: var(--tinta); font-weight: 600; }
+
+.boton-ancho { display: block; width: 100%; text-align: center; }
+
+/* ---------- Finalizar pedido ---------- */
+.checkout { display: grid; gap: 2rem; max-width: 42rem; }
+.resumen-lineas { margin: 0 0 1rem; padding: 0; list-style: none; }
+.resumen-lineas li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--borde);
+}
+.resumen-entrega { margin: 0 0 1rem; }
+
+.formulario fieldset { margin: 0 0 1.75rem; padding: 0; border: 0; }
+.formulario legend { margin-bottom: 0.75rem; padding: 0; font-size: 1.25rem; font-weight: 600; }
+.campo { margin-bottom: 1rem; }
+.campo label { display: block; margin-bottom: 0.3rem; font-weight: 600; }
+.campo input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  background: var(--papel);
+  color: var(--tinta);
+  border: 1px solid var(--suave);
+  border-radius: 2px;
+  font: inherit;
+}
+.ayuda { margin: 0.3rem 0 0; color: var(--suave); font-size: 0.95rem; }
+
+.aviso-prototipo {
+  margin: 0 0 1.5rem;
+  padding: 0.8rem 1rem;
+  background: var(--papel);
+  border-left: 4px solid var(--llama);
+}
+
+.confirmacion { max-width: 42rem; }
+.confirmacion h2:focus { outline: none; }
