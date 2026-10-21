@@ -259,3 +259,58 @@ a { color: var(--anil); }
   html { scroll-behavior: auto; }
   .llama { animation: none; }
 }
+
+/* ---------- Catálogo ---------- */
+.titulo-pagina {
+  margin: 0 0 0.35rem;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.menu a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1rem;
+  margin: 0 0 0.75rem;
+}
+.filtros label { font-weight: 600; }
+.filtros select {
+  min-width: 14rem;
+  padding: 0.55rem 0.8rem;
+  background: var(--papel);
+  color: var(--tinta);
+  border: 1px solid var(--suave);
+  border-radius: 2px;
+  font: inherit;
+}
+
+.resultado { margin: 0 0 1.25rem; color: var(--suave); }
+
+.producto-foto {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-bottom: 1px solid var(--borde);
+}
+
+/* Producto agotado: imagen y texto más apagados, pero la etiqueta se lee bien */
+.producto-agotado .foto-provisional,
+.producto-agotado .producto-foto { opacity: 0.5; filter: grayscale(0.6); }
+.producto-agotado h3,
+.producto-agotado .precio { color: var(--suave); }
+
+.mensaje {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 1rem 1.25rem;
+  background: var(--papel);
+  border: 1px solid var(--borde);
+}
