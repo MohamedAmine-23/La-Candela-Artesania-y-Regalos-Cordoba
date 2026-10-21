@@ -37,7 +37,7 @@ La dueña de la tienda no tiene conocimientos técnicos: vende en su tienda fís
 3. **Ficha de detalle del producto:** al hacer clic en un producto, ver fotos más grandes, la descripción completa y un botón «Añadir al carrito».
 4. **Carrito de compra:** ver los productos añadidos, modificar cantidades y ver el subtotal y el coste de envío.
 5. **Proceso de pago (checkout) básico:** formulario simple con los datos del cliente (nombre, dirección, teléfono y email) y selección del método de pago.
-6. **Dos opciones de entrega:** envío a domicilio por mensajería o recogida gratuita en la tienda física (Córdoba).
+6. **Dos opciones de entrega:** envío a domicilio por mensajería y recogida gratuita en la tienda física (Córdoba).
 
 ### Prioridad media · mejoran la experiencia
 
