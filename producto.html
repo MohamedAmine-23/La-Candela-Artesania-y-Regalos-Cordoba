@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Producto · LaCandela - Artesania y regalos Córdoba</title>
+  <meta name="description" content="Ficha de producto de LaCandela: fotos, descripción completa, precio y disponibilidad.">
+  <link rel="icon" type="image/svg+xml" href="img/icono.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera-interior">
+      <a class="marca" href="index.html" aria-label="LaCandela, ir al inicio">
+        <img src="img/icono.svg" alt="" width="26" height="43">
+        <span class="marca-nombre">LaCandela</span>
+        <span class="marca-lema">Artesania y regalos Córdoba</span>
+      </a>
+      <nav aria-label="Principal">
+        <ul class="menu">
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="index.html#tienda">Tienda y envíos</a></li>
+          <li><a href="carrito.html" id="enlace-carrito">Carrito<span class="carrito-contador" id="carrito-contador" hidden>0</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="contenedor seccion">
+    <p class="volver"><a id="enlace-volver" href="catalogo.html">← Volver al catálogo</a></p>
+
+    <!-- La ficha se pinta desde data/productos.json (js/producto.js) -->
+    <article id="ficha" class="ficha">
+      <p class="resultado">Cargando producto…</p>
+    </article>
+
+    <noscript>
+      <p class="mensaje">Necesitas activar JavaScript para ver el producto.</p>
+    </noscript>
+  </main>
+
+  <footer class="contenedor pie">
+    <p class="pie-nombre">LaCandela - Artesania y regalos Córdoba</p>
+    <p>Tienda física en el centro de Córdoba.</p>
+    <p>Proyecto educativo · IES Fidiana · 1.º CFGS Desarrollo de Aplicaciones Web</p>
+  </footer>
+
+  <script src="js/carrito.js"></script>
+  <script src="js/producto.js"></script>
+</body>
+</html>

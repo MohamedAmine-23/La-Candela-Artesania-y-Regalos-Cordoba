@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carrito · LaCandela - Artesania y regalos Córdoba</title>
+  <meta name="description" content="Tu carrito de LaCandela: revisa tus productos, elige la entrega y consulta el total.">
+  <link rel="icon" type="image/svg+xml" href="img/icono.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera-interior">
+      <a class="marca" href="index.html" aria-label="LaCandela, ir al inicio">
+        <img src="img/icono.svg" alt="" width="26" height="43">
+        <span class="marca-nombre">LaCandela</span>
+        <span class="marca-lema">Artesania y regalos Córdoba</span>
+      </a>
+      <nav aria-label="Principal">
+        <ul class="menu">
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="index.html#tienda">Tienda y envíos</a></li>
+          <li><a href="carrito.html" id="enlace-carrito" aria-current="page">Carrito<span class="carrito-contador" id="carrito-contador" hidden>0</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="contenedor seccion">
+    <h1 class="titulo-pagina">Tu carrito</h1>
+
+    <p id="carrito-aviso" class="resultado" role="status" tabindex="-1"></p>
+
+    <p id="carrito-vacio" class="mensaje" hidden>Tu carrito está vacío. <a href="catalogo.html">Ver el catálogo</a></p>
+
+    <div id="carrito-contenido" class="carrito-layout" hidden>
+      <!-- Líneas del carrito (js/carrito-pagina.js) -->
+      <ul id="carrito-lineas" class="carrito-lineas"></ul>
+
+      <aside class="panel" aria-labelledby="titulo-resumen">
+        <h2 id="titulo-resumen">Resumen</h2>
+
+        <fieldset class="entrega">
+          <legend>Entrega</legend>
+          <label class="opcion">
+            <input type="radio" name="entrega" value="envio">
+            <span><strong>Envío a domicilio por mensajería</strong><br><span id="texto-envio"></span></span>
+          </label>
+          <label class="opcion">
+            <input type="radio" name="entrega" value="recogida">
+            <span><strong>Recogida gratuita en la tienda de Córdoba</strong><br>Gratis</span>
+          </label>
+        </fieldset>
+
+        <dl class="totales">
+          <div><dt>Subtotal</dt><dd id="total-subtotal"></dd></div>
+          <div><dt>Envío</dt><dd id="total-envio"></dd></div>
+          <div class="total-final"><dt>Total</dt><dd id="total-total"></dd></div>
+        </dl>
+
+        <a class="boton boton-ancho" href="checkout.html">Continuar con el pedido</a>
+      </aside>
+    </div>
+
+    <noscript>
+      <p class="mensaje">Necesitas activar JavaScript para ver el carrito.</p>
+    </noscript>
+  </main>
+
+  <footer class="contenedor pie">
+    <p class="pie-nombre">LaCandela - Artesania y regalos Córdoba</p>
+    <p>Tienda física en el centro de Córdoba.</p>
+    <p>Proyecto educativo · IES Fidiana · 1.º CFGS Desarrollo de Aplicaciones Web</p>
+  </footer>
+
+  <script src="js/carrito.js"></script>
+  <script src="js/carrito-pagina.js"></script>
+</body>
+</html>
