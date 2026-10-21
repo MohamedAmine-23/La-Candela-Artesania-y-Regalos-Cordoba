@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo · LaCandela - Artesania y regalos Córdoba</title>
+  <meta name="description" content="Catálogo de LaCandela: cerámica artesanal, cuero, regalos personalizados y novedades de nuestra tienda de Córdoba.">
+  <link rel="icon" type="image/svg+xml" href="img/icono.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <!-- Cabecera -->
+  <header class="cabecera">
+    <div class="contenedor cabecera-interior">
+      <a class="marca" href="index.html" aria-label="LaCandela, ir al inicio">
+        <img src="img/icono.svg" alt="" width="26" height="43">
+        <span class="marca-nombre">LaCandela</span>
+        <span class="marca-lema">Artesania y regalos Córdoba</span>
+      </a>
+      <nav aria-label="Principal">
+        <ul class="menu">
+          <li><a href="catalogo.html" aria-current="page">Catálogo</a></li>
+          <li><a href="index.html#tienda">Tienda y envíos</a></li>
+          <li><a href="carrito.html">Carrito</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="contenedor seccion">
+    <h1 class="titulo-pagina">Catálogo</h1>
+    <p class="seccion-intro">Cerámica, cuero, regalos personalizados y las últimas novedades de la tienda.</p>
+
+    <!-- Filtro por categoría -->
+    <div class="filtros">
+      <label for="filtro-categoria">Categoría</label>
+      <select id="filtro-categoria">
+        <option value="todas">Todas</option>
+        <option value="Cerámica">Cerámica</option>
+        <option value="Cuero">Cuero</option>
+        <option value="Regalos Personalizados">Regalos Personalizados</option>
+        <option value="Novedades">Novedades</option>
+      </select>
+    </div>
+
+    <p class="resultado" id="resultado" aria-live="polite">Cargando productos…</p>
+
+    <!-- Los productos se pintan desde data/productos.json (js/catalogo.js) -->
+    <ul class="productos" id="lista-productos"></ul>
+
+    <noscript>
+      <p class="mensaje">Necesitas activar JavaScript para ver el catálogo.</p>
+    </noscript>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="contenedor pie">
+    <p class="pie-nombre">LaCandela - Artesania y regalos Córdoba</p>
+    <p>Tienda física en el centro de Córdoba.</p>
+    <p>Proyecto educativo · IES Fidiana · 1.º CFGS Desarrollo de Aplicaciones Web</p>
+  </footer>
+
+  <script src="js/catalogo.js"></script>
+</body>
+</html>
