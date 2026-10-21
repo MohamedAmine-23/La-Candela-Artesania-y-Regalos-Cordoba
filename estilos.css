@@ -1,0 +1,261 @@
+/* LaCandela - Artesania y regalos Córdoba · estilos generales */
+
+:root {
+  --cal: #f1eadb;        /* muro encalado */
+  --papel: #faf6ec;
+  --tinta: #33241b;      /* texto */
+  --suave: #6b5848;      /* texto secundario */
+  --barro: #8a4b2c;
+  --llama: #e3a21a;
+  --anil: #2f4a66;       /* azul de patio cordobés: botones y enlaces */
+  --anil-osc: #223850;
+  --borde: #d6c9ae;
+  --ancho: 68rem;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cal);
+  color: var(--tinta);
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+img { max-width: 100%; }
+
+a { color: var(--anil); }
+
+:focus-visible {
+  outline: 3px solid var(--anil);
+  outline-offset: 3px;
+}
+
+.contenedor {
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.salto {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--papel);
+  padding: 0.5rem 1rem;
+  z-index: 10;
+}
+.salto:focus { left: 0.5rem; top: 0.5rem; }
+
+/* ---------- Cabecera ---------- */
+.cabecera { border-bottom: 1px solid var(--borde); }
+
+.cabecera-interior {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--tinta);
+  text-decoration: none;
+}
+.marca img { width: 26px; height: auto; }
+.marca-nombre { font-size: 1.35rem; font-weight: 600; }
+.marca-lema { display: none; font-size: 0.9rem; color: var(--suave); }
+
+.menu {
+  display: flex;
+  gap: 1.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.menu a { color: var(--tinta); text-decoration: none; font-weight: 500; }
+.menu a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+@media (min-width: 40rem) {
+  .marca-lema { display: inline; }
+}
+
+/* ---------- Portada (banner) ---------- */
+.hero {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.hero p {
+  max-width: 34rem;
+  margin: 0 0 1.75rem;
+  color: var(--suave);
+  font-size: 1.15rem;
+}
+
+.boton {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: var(--anil);
+  color: var(--papel);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 2px;
+}
+.boton:hover { background: var(--anil-osc); }
+
+.hero-vela {
+  display: grid;
+  place-items: center;
+  width: min(100%, 20rem);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  background: #e7dabd;
+  border-radius: 50%;
+}
+.hero-vela svg { height: 78%; width: auto; }
+
+.llama {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: parpadeo 2.6s ease-in-out infinite;
+}
+@keyframes parpadeo {
+  0%, 100% { transform: scale(1, 1); }
+  50% { transform: scale(0.93, 1.07); }
+}
+
+@media (min-width: 48rem) {
+  .hero {
+    grid-template-columns: 1.2fr 0.8fr;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+/* ---------- Secciones ---------- */
+.seccion { padding-top: 3rem; padding-bottom: 3rem; }
+
+.seccion h2 {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.seccion-intro { margin: 0 0 1.75rem; color: var(--suave); }
+
+/* ---------- Novedades ---------- */
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.producto {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--papel);
+  border: 1px solid var(--borde);
+}
+
+.foto-provisional {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  background: repeating-linear-gradient(135deg, #e8ddc6 0 10px, #efe6d1 10px 20px);
+  border-bottom: 1px solid var(--borde);
+  color: var(--suave);
+  font-size: 0.9rem;
+}
+
+.producto-cuerpo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.producto h3 { margin: 0 0 0.25rem; font-size: 1.15rem; font-weight: 600; line-height: 1.3; }
+.producto-desc { margin: 0 0 0.9rem; color: var(--suave); font-size: 0.98rem; }
+
+.producto-datos {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: auto;
+  margin-bottom: 0.9rem;
+}
+
+.precio { font-size: 1.2rem; font-weight: 600; }
+
+.estado { font-size: 0.9rem; color: var(--suave); }
+.estado::before {
+  content: "";
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-right: 0.4rem;
+  border-radius: 50%;
+  background: #4f7a4f;
+}
+.estado-agotado { color: var(--barro); }
+.estado-agotado::before { background: var(--barro); }
+
+.producto-enlace { font-weight: 600; }
+
+.ver-todo { margin: 1.75rem 0 0; }
+
+/* ---------- Información de la tienda ---------- */
+.informacion {
+  background: var(--papel);
+  border-top: 1px solid var(--borde);
+  border-bottom: 1px solid var(--borde);
+}
+
+.informacion-lista { display: grid; gap: 1.75rem; margin-top: 1.5rem; }
+
+.informacion-lista h3 { margin: 0 0 0.35rem; font-size: 1.2rem; font-weight: 600; }
+.informacion-lista p { margin: 0; color: var(--suave); }
+
+@media (min-width: 48rem) {
+  .informacion-lista { grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .informacion-lista > div + div {
+    padding-left: 3rem;
+    border-left: 1px solid var(--borde);
+  }
+}
+
+/* ---------- Pie ---------- */
+.pie { padding-top: 2rem; padding-bottom: 2.5rem; color: var(--suave); font-size: 0.95rem; }
+.pie p { margin: 0 0 0.25rem; }
+.pie-nombre { color: var(--tinta); font-weight: 600; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .llama { animation: none; }
+}
