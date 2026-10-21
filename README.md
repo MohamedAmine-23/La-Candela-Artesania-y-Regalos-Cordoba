@@ -19,12 +19,12 @@ Trabajamos con la metodología **Scrum**. Los roles organizan el trabajo, pero t
 
 | Integrante | Rol | Aportación principal |
 |---|---|---|
-| Nombre 1 | Product Owner | Representa a la dueña de la tienda, ordena el Product Backlog y aporta el contenido de ejemplo |
-| Nombre 2 | Scrum Master | Facilita las reuniones y ayuda a quitar impedimentos |
-| Nombre 3 | Desarrollador/a | Diseño y maquetación del catálogo |
-| Nombre 4 | Desarrollador/a | Archivo de datos de productos y pruebas |
-| Nombre 5 | Desarrollador/a | Filtros por categoría |
-| Nombre 6 | Desarrollador/a | Ficha de detalle del producto |
+| Juan Rosa | Product Owner | |
+| Ángel Castro | Scrum Master | |
+| Mohamed Amine El Harchal | Desarrollador/a | |
+| Eduardo Ibarra | Desarrollador/a | |
+| Adrián Rodríguez | Desarrollador/a | |
+| Olga Lara | Desarrollador/a | |
 
 ## Requisitos de la clienta (Product Backlog)
 
