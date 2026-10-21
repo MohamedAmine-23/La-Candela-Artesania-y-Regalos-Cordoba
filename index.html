@@ -4,58 +4,149 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LaCandela - Artesania y regalos Córdoba</title>
-  <style>
-    :root {
-      --fondo: #f1f4f1;
-      --texto: #1f3a34;
-      --suave: #5b706a;
-      --llama: #e8a317;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --fondo: #14231f;
-        --texto: #eef2ee;
-        --suave: #a9bab4;
-      }
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; margin: 0; }
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      background: var(--fondo);
-      color: var(--texto);
-      font-family: Georgia, "Times New Roman", serif;
-      text-align: center;
-    }
-    main { max-width: 34rem; }
-    .llama {
-      width: 18px;
-      height: 30px;
-      margin: 0 auto 18px;
-      background: var(--llama);
-      border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
-      animation: parpadeo 2.4s ease-in-out infinite;
-    }
-    h1 { margin: 0 0 8px; font-size: clamp(2rem, 6vw, 3rem); line-height: 1.1; }
-    p { margin: 0; font-size: 1.1rem; line-height: 1.6; color: var(--suave); }
-    @keyframes parpadeo {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(0.92, 1.06); opacity: 0.85; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .llama { animation: none; }
-    }
-  </style>
+  <meta name="description" content="Cerámica artesanal, marroquinería, regalos personalizados y recuerdos locales de una tienda del centro de Córdoba, ahora también online.">
+  <link rel="icon" type="image/svg+xml" href="img/icono.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-  <main>
-    <div class="llama" aria-hidden="true"></div>
-    <h1>LaCandela</h1>
-    <p>Artesania y regalos Córdoba</p>
-    <p>Estamos preparando la tienda online. Muy pronto podrás ver aquí nuestros productos.</p>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <!-- Cabecera -->
+  <header class="cabecera">
+    <div class="contenedor cabecera-interior">
+      <a class="marca" href="index.html" aria-label="LaCandela, ir al inicio">
+        <img src="img/icono.svg" alt="" width="26" height="43">
+        <span class="marca-nombre">LaCandela</span>
+        <span class="marca-lema">Artesania y regalos Córdoba</span>
+      </a>
+      <nav aria-label="Principal">
+        <ul class="menu">
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="#tienda">Tienda y envíos</a></li>
+          <li><a href="carrito.html">Carrito</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- Banner principal -->
+    <section class="contenedor hero" aria-labelledby="titulo-principal">
+      <div>
+        <h1 id="titulo-principal">Artesanía y regalos de Córdoba, ahora también online</h1>
+        <p>Cerámica artesanal, marroquinería, regalos personalizados y recuerdos locales de nuestra tienda del centro de Córdoba.</p>
+        <a class="boton" href="catalogo.html">Ver el catálogo</a>
+      </div>
+
+      <div class="hero-vela" aria-hidden="true">
+        <svg viewBox="0 0 120 200" xmlns="http://www.w3.org/2000/svg" focusable="false">
+          <ellipse cx="60" cy="184" rx="44" ry="9" fill="#8A4B2C"/>
+          <rect x="38" y="82" width="44" height="100" rx="5" fill="#F3E6C8" stroke="#33241B" stroke-width="3"/>
+          <line x1="60" y1="82" x2="60" y2="68" stroke="#33241B" stroke-width="3" stroke-linecap="round"/>
+          <g class="llama">
+            <path d="M60 14C74 34 80 46 80 56C80 68 71 74 60 74C49 74 40 68 40 56C40 46 46 34 60 14Z" fill="#E3A21A"/>
+            <path d="M60 40C67 50 70 56 70 62C70 69 65 72 60 72C55 72 50 69 50 62C50 56 53 50 60 40Z" fill="#FBE29A"/>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Novedades -->
+    <section class="contenedor seccion" aria-labelledby="titulo-novedades">
+      <h2 id="titulo-novedades">Novedades</h2>
+      <p class="seccion-intro">Las últimas piezas que han llegado a la tienda.</p>
+
+      <!--
+        PRODUCTOS DE EJEMPLO.
+        En el Sprint 1 se sustituirán por los productos reales del archivo de datos (data/productos.json)
+        y los recuadros provisionales por las fotos de cada producto.
+      -->
+      <ul class="productos">
+        <li class="producto">
+          <div class="foto-provisional" role="img" aria-label="Foto del producto pendiente">Foto provisional</div>
+          <div class="producto-cuerpo">
+            <h3>Taza de cerámica esmaltada</h3>
+            <p class="producto-desc">Cerámica artesanal con esmalte azul.</p>
+            <div class="producto-datos">
+              <span class="precio">16,00 €</span>
+              <span class="estado">Disponible</span>
+            </div>
+            <a class="producto-enlace" href="producto.html?id=1">Ver producto</a>
+          </div>
+        </li>
+
+        <li class="producto">
+          <div class="foto-provisional" role="img" aria-label="Foto del producto pendiente">Foto provisional</div>
+          <div class="producto-cuerpo">
+            <h3>Cartera de cuero</h3>
+            <p class="producto-desc">Marroquinería cosida con cuidado.</p>
+            <div class="producto-datos">
+              <span class="precio">29,00 €</span>
+              <span class="estado">Disponible</span>
+            </div>
+            <a class="producto-enlace" href="producto.html?id=2">Ver producto</a>
+          </div>
+        </li>
+
+        <li class="producto">
+          <div class="foto-provisional" role="img" aria-label="Foto del producto pendiente">Foto provisional</div>
+          <div class="producto-cuerpo">
+            <h3>Llavero personalizado</h3>
+            <p class="producto-desc">Con el nombre o la frase que quieras.</p>
+            <div class="producto-datos">
+              <span class="precio">8,50 €</span>
+              <span class="estado">Disponible</span>
+            </div>
+            <a class="producto-enlace" href="producto.html?id=3">Ver producto</a>
+          </div>
+        </li>
+
+        <li class="producto">
+          <div class="foto-provisional" role="img" aria-label="Foto del producto pendiente">Foto provisional</div>
+          <div class="producto-cuerpo">
+            <h3>Plato decorativo</h3>
+            <p class="producto-desc">Pieza de cerámica pintada a mano.</p>
+            <div class="producto-datos">
+              <span class="precio">22,00 €</span>
+              <span class="estado estado-agotado">Agotado</span>
+            </div>
+            <a class="producto-enlace" href="producto.html?id=4">Ver producto</a>
+          </div>
+        </li>
+      </ul>
+
+      <p class="ver-todo"><a href="catalogo.html">Ver todos los productos</a></p>
+    </section>
+
+    <!-- Información de la tienda -->
+    <section class="informacion" id="tienda" aria-labelledby="titulo-tienda">
+      <div class="contenedor seccion">
+        <h2 id="titulo-tienda">Recógelo en tienda o recíbelo en casa</h2>
+        <div class="informacion-lista">
+          <div>
+            <h3>Recogida gratuita en Córdoba</h3>
+            <p>Haz tu pedido online y recógelo sin coste en nuestra tienda física del centro de Córdoba.</p>
+          </div>
+          <div>
+            <h3>Envío a toda España</h3>
+            <p>Te lo llevamos a casa por mensajería, estés donde estés. El coste de envío se muestra en el carrito antes de pagar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <!-- Pie de página -->
+  <footer class="contenedor pie">
+    <p class="pie-nombre">LaCandela - Artesania y regalos Córdoba</p>
+    <p>Tienda física en el centro de Córdoba.</p>
+    <p>Proyecto educativo · IES Fidiana · 1.º CFGS Desarrollo de Aplicaciones Web</p>
+  </footer>
 </body>
 </html>
