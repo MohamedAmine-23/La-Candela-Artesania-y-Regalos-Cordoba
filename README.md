@@ -1,17 +1,17 @@
-# LaCandela - Artesania y regalos Córdoba · Tienda web de artesanía y regalos de Córdoba
+# LaCandela Online · Tienda web de artesanía y regalos de Córdoba
 
 Proyecto del módulo **Entornos de Desarrollo** · 1.º CFGS Desarrollo de Aplicaciones Web · IES Fidiana (Córdoba) · Curso 2026–2027
 
-🌐 **Web publicada:** 
+🌐 **Web publicada:** https://TU-USUARIO.github.io/lacandela-web/
 
 ---
 
-## ¿Qué es La Candela Online?
+## ¿Qué es LaCandela Online?
 
-La Candela es una pequeña tienda física del centro de Córdoba especializada en regalos personalizados, cerámica artesanal, productos de marroquinería y recuerdos locales de alta calidad. Este proyecto es su tienda web: permite vender online a clientes de toda España y que los clientes locales hagan pedidos para recoger en la tienda.
+**LaCandela - Artesania y regalos Córdoba** es una pequeña tienda física del centro de Córdoba especializada en regalos personalizados, cerámica artesanal, productos de marroquinería y recuerdos locales de alta calidad. Este proyecto es su tienda web: permite vender online a clientes de toda España y que los clientes locales hagan pedidos para recoger en la tienda.
 
 - **¿Quién la utiliza?** Clientes de toda España, clientes locales que recogen en tienda y la dueña, que no tiene conocimientos técnicos.
-- **¿Qué necesidad resuelve?** Que La Candela pueda empezar a vender online de forma sencilla.
+- **¿Qué necesidad resuelve?** Que LaCandela pueda empezar a vender online de forma sencilla.
 
 ## Equipo y roles Scrum
 
@@ -26,29 +26,30 @@ Trabajamos con la metodología **Scrum**. Los roles organizan el trabajo, pero t
 | Nombre 5 | Desarrollador/a | Filtros por categoría |
 | Nombre 6 | Desarrollador/a | Ficha de detalle del producto |
 
-## Funcionalidades previstas (Product Backlog)
+## Requisitos de la clienta (Product Backlog)
 
-Ordenadas de mayor a menor prioridad, según lo que pide la dueña de la tienda:
+La dueña de la tienda no tiene conocimientos técnicos: vende en su tienda física, pero quiere empezar a vender online a toda España y permitir que los clientes locales hagan pedidos para recoger en tienda. Estos son sus requisitos, de mayor a menor prioridad.
 
-**Prioridad alta (imprescindibles)**
-1. Catálogo de productos (foto, nombre, descripción corta, precio y disponibilidad)
-2. Filtros por categoría (Cerámica, Cuero, Regalos personalizados, Novedades)
-3. Ficha de detalle del producto
-4. Carrito de compra
-5. Proceso de pago (checkout) básico
-6. Dos opciones de entrega: envío a domicilio o recogida gratuita en la tienda de Córdoba
+### Prioridad alta · imprescindibles para abrir la tienda online
 
-**Prioridad media**
+1. **Catálogo de productos:** listado con foto, nombre, descripción corta, precio y si hay stock disponible.
+2. **Filtros por categoría:** poder organizar los productos (Cerámica, Cuero, Regalos Personalizados, Novedades).
+3. **Ficha de detalle del producto:** al hacer clic en un producto, ver fotos más grandes, la descripción completa y un botón «Añadir al carrito».
+4. **Carrito de compra:** ver los productos añadidos, modificar cantidades y ver el subtotal y el coste de envío.
+5. **Proceso de pago (checkout) básico:** formulario simple con los datos del cliente (nombre, dirección, teléfono y email) y selección del método de pago.
+6. **Dos opciones de entrega:** envío a domicilio por mensajería o recogida gratuita en la tienda física (Córdoba).
 
-7. Buscador de productos
-8. Panel de administración simple
-9. Pago simulado (tarjeta o Bizum)
+### Prioridad media · mejoran la experiencia
 
-**Prioridad baja (futuras versiones)**
+7. **Buscador de productos:** barra de búsqueda en la cabecera por palabra clave.
+8. **Panel de administración simple:** añadir nuevos productos, cambiar precios o marcar pedidos como «Enviados» de forma sencilla.
+9. **Pago simulado:** simulación de pago con tarjeta o Bizum.
 
-10. Reseñas y opiniones
-11. Newsletter con 10 % de descuento en la primera compra
-12. Lista de deseos
+### Prioridad baja · futuras versiones
+
+10. **Reseñas y opiniones:** que los clientes puedan dejar estrellas y comentarios en los productos.
+11. **Newsletter:** cajetín para dejar el email y recibir un 10 % de descuento en la primera compra.
+12. **Lista de deseos (wishlist):** guardar productos favoritos para comprar más adelante.
 
 > El Product Backlog completo y la planificación de Sprints están en el libro de Excel del proyecto (`Practica2_Scrum_Artesania.xlsx`).
 
@@ -70,7 +71,7 @@ Ordenadas de mayor a menor prioridad, según lo que pide la dueña de la tienda:
 ## Estructura del repositorio
 
 ```
-la-candela-web/
+lacandela-web/
 ├── index.html          # Portada
 ├── catalogo.html       # Catálogo de productos
 ├── producto.html       # Ficha de detalle
@@ -87,7 +88,7 @@ la-candela-web/
 
 1. Clona el repositorio:
    ```
-   git clone https://github.com/TU-USUARIO/la-candela-web.git
+   git clone https://github.com/TU-USUARIO/lacandela-web.git
    ```
 2. Abre la carpeta del proyecto en tu editor (por ejemplo, VS Code).
 3. Abre `index.html` en el navegador. Si el catálogo no carga los productos, usa la extensión *Live Server* de VS Code: algunos navegadores no permiten leer el archivo de datos al abrir la página directamente desde la carpeta.
