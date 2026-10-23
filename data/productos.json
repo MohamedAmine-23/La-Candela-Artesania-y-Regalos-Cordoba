@@ -7,11 +7,11 @@
     "descripcion": "Taza de cerámica con esmalte azul, ideal para el café de la mañana. Apta para lavavajillas.",
     "precio": 16.0,
     "disponible": true,
-    "imagen": "img/productos/taza-ceramica-1.jpg",
+    "imagen": "img/productos/taza_ceramica.png",
     "imagenes": [
-      "img/productos/taza-ceramica-1.jpg",
-      "img/productos/taza-ceramica-2.jpg",
-      "img/productos/taza-ceramica-3.jpg"
+      "img/productos/taza_ceramica.png",
+      "img/productos/taza_ceramica2.png",
+      "img/productos/taza_ceramica3.png"
     ]
   },
   {
@@ -22,11 +22,11 @@
     "descripcion": "Cartera de cuero con varios compartimentos para tarjetas y billetes. El cuero se suaviza con el uso.",
     "precio": 29.0,
     "disponible": true,
-    "imagen": "img/productos/cartera-cuero-1.jpg",
+    "imagen": "img/productos/cartera_cuero.png",
     "imagenes": [
-      "img/productos/cartera-cuero-1.jpg",
-      "img/productos/cartera-cuero-2.jpg",
-      "img/productos/cartera-cuero-3.jpg"
+      "img/productos/cartera_cuero.png",
+      "img/productos/cartera_cuero2.png",
+      "img/productos/cartera_cuero3.png"
     ]
   },
   {
@@ -37,11 +37,11 @@
     "descripcion": "Llavero personalizable con el nombre, la fecha o la frase que prefieras. Un detalle pequeño y muy personal.",
     "precio": 8.5,
     "disponible": true,
-    "imagen": "img/productos/llavero-personalizado-1.jpg",
+    "imagen": "img/productos/llavero_personalizado.png",
     "imagenes": [
-      "img/productos/llavero-personalizado-1.jpg",
-      "img/productos/llavero-personalizado-2.jpg",
-      "img/productos/llavero-personalizado-3.jpg"
+      "img/productos/llavero_personalizado.png",
+      "img/productos/llavero_personalizado2.png",
+      "img/productos/llavero_personalizado3.png"
     ]
   },
   {
@@ -52,11 +52,11 @@
     "descripcion": "Plato decorativo de cerámica con motivos pintados a mano, pensado para colgar en la pared.",
     "precio": 22.0,
     "disponible": false,
-    "imagen": "img/productos/plato-decorativo-1.jpg",
+    "imagen": "img/productos/plato_decorativo.png",
     "imagenes": [
-      "img/productos/plato-decorativo-1.jpg",
-      "img/productos/plato-decorativo-2.jpg",
-      "img/productos/plato-decorativo-3.jpg"
+      "img/productos/plato_decorativo.png",
+      "img/productos/plato_decorativo2.png",
+      "img/productos/plato_decorativo3.png"
     ]
   },
   {
@@ -67,11 +67,11 @@
     "descripcion": "Cuenco de cerámica en tonos azules, útil tanto para servir como para decorar.",
     "precio": 18.5,
     "disponible": true,
-    "imagen": "img/productos/cuenco-ceramica-1.jpg",
+    "imagen": "img/productos/cuenco_azul.png",
     "imagenes": [
-      "img/productos/cuenco-ceramica-1.jpg",
-      "img/productos/cuenco-ceramica-2.jpg",
-      "img/productos/cuenco-ceramica-3.jpg"
+      "img/productos/cuenco_azul.png",
+      "img/productos/cuenco_azul2.png",
+      "img/productos/cuenco_azul3.png"
     ]
   },
   {
@@ -82,11 +82,11 @@
     "descripcion": "Cinturón de cuero resistente con hebilla metálica. Pensado para durar años.",
     "precio": 34.0,
     "disponible": true,
-    "imagen": "img/productos/cinturon-cuero-1.jpg",
+    "imagen": "img/productos/cinturon_cuero.png",
     "imagenes": [
-      "img/productos/cinturon-cuero-1.jpg",
-      "img/productos/cinturon-cuero-2.jpg",
-      "img/productos/cinturon-cuero-3.jpg"
+      "img/productos/cinturon_cuero.png",
+      "img/productos/cinturon_cuero2.png",
+      "img/productos/cinturon_cuero3.png"
     ]
   },
   {
@@ -97,11 +97,11 @@
     "descripcion": "Monedero de cuero con cierre, lo bastante pequeño para llevarlo en cualquier bolsillo.",
     "precio": 19.0,
     "disponible": true,
-    "imagen": "img/productos/monedero-cuero-1.jpg",
+    "imagen": "img/productos/monedero_cuero.png",
     "imagenes": [
-      "img/productos/monedero-cuero-1.jpg",
-      "img/productos/monedero-cuero-2.jpg",
-      "img/productos/monedero-cuero-3.jpg"
+      "img/productos/monedero_cuero.png",
+      "img/productos/monedero_cuero2.png",
+      "img/productos/monedero_cuero3.png"
     ]
   },
   {
@@ -112,11 +112,11 @@
     "descripcion": "Taza de cerámica con el nombre que elijas grabado. Un regalo para cumpleaños o aniversarios.",
     "precio": 15.0,
     "disponible": true,
-    "imagen": "img/productos/taza-grabada-1.jpg",
+    "imagen": "img/productos/taza_nombre.png",
     "imagenes": [
-      "img/productos/taza-grabada-1.jpg",
-      "img/productos/taza-grabada-2.jpg",
-      "img/productos/taza-grabada-3.jpg"
+      "img/productos/taza_nombre.png",
+      "img/productos/taza_nombre2.png",
+      "img/productos/taza_nombre3.png"
     ]
   },
   {
@@ -127,11 +127,11 @@
     "descripcion": "Marco de madera con una dedicatoria grabada, para guardar una foto especial.",
     "precio": 21.0,
     "disponible": false,
-    "imagen": "img/productos/marco-dedicatoria-1.jpg",
+    "imagen": "img/productos/marco.png",
     "imagenes": [
-      "img/productos/marco-dedicatoria-1.jpg",
-      "img/productos/marco-dedicatoria-2.jpg",
-      "img/productos/marco-dedicatoria-3.jpg"
+      "img/productos/marco.png",
+      "img/productos/marco2.png",
+      "img/productos/marco3.png"
     ]
   },
   {
@@ -142,11 +142,11 @@
     "descripcion": "Juego de cuatro posavasos de cerámica con motivos decorativos. Protegen la mesa y alegran cualquier rincón.",
     "precio": 14.0,
     "disponible": true,
-    "imagen": "img/productos/posavasos-ceramica-1.jpg",
+    "imagen": "img/productos/posavasos.png",
     "imagenes": [
-      "img/productos/posavasos-ceramica-1.jpg",
-      "img/productos/posavasos-ceramica-2.jpg",
-      "img/productos/posavasos-ceramica-3.jpg"
+      "img/productos/posavasos.png",
+      "img/productos/posavasos2.png",
+      "img/productos/posavasos3.png"
     ]
   },
   {
@@ -157,11 +157,11 @@
     "descripcion": "Bolso pequeño de cuero, ligero y con cierre de cremallera, para llevar lo imprescindible.",
     "precio": 42.0,
     "disponible": true,
-    "imagen": "img/productos/bolso-cuero-1.jpg",
+    "imagen": "img/productos/bolso_cuero.png",
     "imagenes": [
-      "img/productos/bolso-cuero-1.jpg",
-      "img/productos/bolso-cuero-2.jpg",
-      "img/productos/bolso-cuero-3.jpg"
+      "img/productos/bolso_cuero.png",
+      "img/productos/bolso_cuero2.png",
+      "img/productos/bolso_cuero3.png"
     ]
   },
   {
@@ -172,11 +172,11 @@
     "descripcion": "Vela artesanal en un vaso de cerámica que puedes reutilizar cuando se acabe.",
     "precio": 12.0,
     "disponible": true,
-    "imagen": "img/productos/vela-ceramica-1.jpg",
+    "imagen": "img/productos/vela.png",
     "imagenes": [
-      "img/productos/vela-ceramica-1.jpg",
-      "img/productos/vela-ceramica-2.jpg",
-      "img/productos/vela-ceramica-3.jpg"
+      "img/productos/vela.png",
+      "img/productos/vela2.png",
+      "img/productos/vela3.png"
     ]
   }
 ]
