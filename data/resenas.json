@@ -1,0 +1,198 @@
+[
+  {
+    "productoId": 1,
+    "autor": "Marta L.",
+    "estrellas": 5,
+    "texto": "Preciosa y muy resistente. El esmalte azul es aún más bonito en persona.",
+    "fecha": "2026-09-14"
+  },
+  {
+    "productoId": 1,
+    "autor": "Javier R.",
+    "estrellas": 4,
+    "texto": "Buen tamaño para el café. Pesa un poco más de lo que esperaba, pero se nota la calidad.",
+    "fecha": "2026-09-28"
+  },
+  {
+    "productoId": 1,
+    "autor": "Lucía P.",
+    "estrellas": 5,
+    "texto": "La compré de regalo y encantó.",
+    "fecha": "2026-10-05"
+  },
+  {
+    "productoId": 2,
+    "autor": "Antonio G.",
+    "estrellas": 5,
+    "texto": "Cuero de buena calidad y costuras firmes. Se ve que está hecha con cuidado.",
+    "fecha": "2026-09-10"
+  },
+  {
+    "productoId": 2,
+    "autor": "Carmen S.",
+    "estrellas": 4,
+    "texto": "Tiene muchos huecos para tarjetas. Al principio está algo rígida.",
+    "fecha": "2026-10-01"
+  },
+  {
+    "productoId": 3,
+    "autor": "Pablo M.",
+    "estrellas": 5,
+    "texto": "Lo pedí con el nombre de mi hijo y quedó perfecto.",
+    "fecha": "2026-09-20"
+  },
+  {
+    "productoId": 3,
+    "autor": "Elena T.",
+    "estrellas": 4,
+    "texto": "Muy bonito detalle para regalar. Pequeño pero bien acabado.",
+    "fecha": "2026-10-08"
+  },
+  {
+    "productoId": 4,
+    "autor": "Rosa V.",
+    "estrellas": 5,
+    "texto": "Una pieza preciosa para la pared del salón. Los colores son muy vivos.",
+    "fecha": "2026-08-30"
+  },
+  {
+    "productoId": 4,
+    "autor": "Miguel Á. H.",
+    "estrellas": 5,
+    "texto": "Me encantó. Lástima que se agote tan rápido.",
+    "fecha": "2026-09-18"
+  },
+  {
+    "productoId": 4,
+    "autor": "Inés C.",
+    "estrellas": 4,
+    "texto": "Muy bonito, aunque más pequeño de lo que imaginaba.",
+    "fecha": "2026-10-02"
+  },
+  {
+    "productoId": 5,
+    "autor": "Sergio D.",
+    "estrellas": 4,
+    "texto": "Lo uso para servir aceitunas y queda genial en la mesa.",
+    "fecha": "2026-09-22"
+  },
+  {
+    "productoId": 5,
+    "autor": "Paula N.",
+    "estrellas": 5,
+    "texto": "El azul es precioso y el acabado es muy bueno.",
+    "fecha": "2026-10-10"
+  },
+  {
+    "productoId": 6,
+    "autor": "Daniel F.",
+    "estrellas": 5,
+    "texto": "Resistente y cómodo, la hebilla es sólida.",
+    "fecha": "2026-09-12"
+  },
+  {
+    "productoId": 6,
+    "autor": "Álvaro B.",
+    "estrellas": 4,
+    "texto": "Muy buen cinturón por el precio. El cuero huele muy bien.",
+    "fecha": "2026-09-30"
+  },
+  {
+    "productoId": 7,
+    "autor": "Teresa A.",
+    "estrellas": 4,
+    "texto": "Pequeño y práctico, cabe en cualquier bolsillo.",
+    "fecha": "2026-09-16"
+  },
+  {
+    "productoId": 7,
+    "autor": "Raúl O.",
+    "estrellas": 3,
+    "texto": "Está bien, pero esperaba que el cierre fuera un poco más suave.",
+    "fecha": "2026-10-04"
+  },
+  {
+    "productoId": 8,
+    "autor": "Cristina E.",
+    "estrellas": 5,
+    "texto": "El grabado quedó nítido y mi hermana se emocionó.",
+    "fecha": "2026-09-25"
+  },
+  {
+    "productoId": 8,
+    "autor": "David L.",
+    "estrellas": 5,
+    "texto": "Un regalo muy personal, perfecto para un aniversario.",
+    "fecha": "2026-10-07"
+  },
+  {
+    "productoId": 8,
+    "autor": "Nuria Q.",
+    "estrellas": 4,
+    "texto": "Muy bonita. Revisad bien el nombre antes de confirmar el pedido.",
+    "fecha": "2026-10-12"
+  },
+  {
+    "productoId": 9,
+    "autor": "Beatriz J.",
+    "estrellas": 5,
+    "texto": "Muy elegante, la dedicatoria grabada es un detalle precioso.",
+    "fecha": "2026-09-05"
+  },
+  {
+    "productoId": 9,
+    "autor": "Fernando K.",
+    "estrellas": 4,
+    "texto": "Buena madera y buen acabado.",
+    "fecha": "2026-09-27"
+  },
+  {
+    "productoId": 10,
+    "autor": "Laura Z.",
+    "estrellas": 5,
+    "texto": "Cuatro posavasos preciosos que protegen bien la mesa.",
+    "fecha": "2026-10-09"
+  },
+  {
+    "productoId": 10,
+    "autor": "Iván C.",
+    "estrellas": 4,
+    "texto": "Los motivos son muy bonitos. Algo finos, pero resistentes.",
+    "fecha": "2026-10-14"
+  },
+  {
+    "productoId": 11,
+    "autor": "Silvia M.",
+    "estrellas": 5,
+    "texto": "Ligero y con espacio justo para lo imprescindible. Me encanta.",
+    "fecha": "2026-10-11"
+  },
+  {
+    "productoId": 11,
+    "autor": "Héctor P.",
+    "estrellas": 4,
+    "texto": "Bonito y bien rematado.",
+    "fecha": "2026-10-15"
+  },
+  {
+    "productoId": 12,
+    "autor": "Marina G.",
+    "estrellas": 5,
+    "texto": "Huele muy bien y el vaso de cerámica lo reutilizo para guardar cosas.",
+    "fecha": "2026-10-13"
+  },
+  {
+    "productoId": 12,
+    "autor": "Óscar R.",
+    "estrellas": 4,
+    "texto": "Un bonito detalle para regalar.",
+    "fecha": "2026-10-16"
+  },
+  {
+    "productoId": 12,
+    "autor": "Julia F.",
+    "estrellas": 5,
+    "texto": "Hace la casa más acogedora.",
+    "fecha": "2026-10-18"
+  }
+]
