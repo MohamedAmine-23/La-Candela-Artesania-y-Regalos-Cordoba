@@ -23,10 +23,16 @@
         <span class="marca-nombre">LaCandela</span>
         <span class="marca-lema">Artesania y regalos Córdoba</span>
       </a>
+      <form class="buscador" role="search" action="catalogo.html" method="get">
+        <label class="sr-only" for="buscar">Buscar productos</label>
+        <input id="buscar" name="q" type="search" placeholder="Buscar productos" autocomplete="off">
+        <button type="submit">Buscar</button>
+      </form>
       <nav aria-label="Principal">
         <ul class="menu">
           <li><a href="catalogo.html">Catálogo</a></li>
-          <li><a href="#tienda">Tienda y envíos</a></li>
+          <li><a href="index.html#tienda">Tienda y envíos</a></li>
+          <li><a href="favoritos.html" id="enlace-favoritos">Favoritos<span class="carrito-contador" id="favoritos-contador" hidden>0</span></a></li>
           <li><a href="carrito.html" id="enlace-carrito">Carrito<span class="carrito-contador" id="carrito-contador" hidden>0</span></a></li>
         </ul>
       </nav>
@@ -149,5 +155,6 @@
     <p>Proyecto educativo · IES Fidiana · 1.º CFGS Desarrollo de Aplicaciones Web</p>
   </footer>
   <script src="js/carrito.js"></script>
+  <script src="js/tienda.js"></script>
 </body>
 </html>
