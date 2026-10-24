@@ -4,8 +4,10 @@
 
   var CLAVE = "lacandela-carrito";
   var CLAVE_PEDIDOS = "lacandela-pedidos";
-  var PRECIO_ENVIO = 4.95;   // euros. Dato de ejemplo: confirmar la tarifa real con la dueña (Product Owner)
-  var MAX_UNIDADES = 10;     // máximo de unidades de un mismo producto
+  var PRECIO_ENVIO = 4.95;            // euros. Dato de ejemplo: confirmar la tarifa real con la dueña (Product Owner)
+  var UNIDADES_ENVIO_GRATIS = 3;      // con 3 o más unidades, el envío a domicilio es gratis
+  var DESCUENTO_PRIMERA_COMPRA = 0.10; // 10 % en la primera compra
+  var MAX_UNIDADES = 10;              // máximo de unidades de un mismo producto
 
   var formato = new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR" });
 
@@ -91,18 +93,40 @@
     guardarEstado(e);
   }
 
-  function costeEnvio(entrega) {
-    return (entrega || obtener().entrega) === "envio" ? PRECIO_ENVIO : 0;
+  function pedidosAnteriores() {
+    var lista = leer(CLAVE_PEDIDOS, []);
+    return Array.isArray(lista) ? lista : [];
   }
 
-  function guardarPedido(pedido) {
-    var lista = leer(CLAVE_PEDIDOS, []);
-    if (!Array.isArray(lista)) { lista = []; }
-    lista.push(pedido);
-    escribir(CLAVE_PEDIDOS, lista);
+  // Primera compra = todavía no hay ningún pedido guardado en este navegador.
+  function esPrimeraCompra() {
+    return pedidosAnteriores().length === 0;
   }
 
   function redondear(x) { return Math.round(x * 100) / 100; }
+
+  // Calcula todos los importes a partir de las líneas [{ producto, cantidad }] y la entrega elegida.
+  function totales(lineas, entrega) {
+    var totalUnidades = lineas.reduce(function (t, l) { return t + l.cantidad; }, 0);
+    var subtotal = redondear(lineas.reduce(function (t, l) { return t + l.producto.precio * l.cantidad; }, 0));
+    var descuento = (subtotal > 0 && esPrimeraCompra()) ? redondear(subtotal * DESCUENTO_PRIMERA_COMPRA) : 0;
+    var envioGratis = totalUnidades >= UNIDADES_ENVIO_GRATIS;
+    var envio = (entrega === "envio" && !envioGratis) ? PRECIO_ENVIO : 0;
+    return {
+      unidades: totalUnidades,
+      subtotal: subtotal,
+      descuento: descuento,
+      envio: envio,
+      envioGratis: envioGratis,
+      total: redondear(subtotal - descuento + envio)
+    };
+  }
+
+  function guardarPedido(pedido) {
+    var lista = pedidosAnteriores();
+    lista.push(pedido);
+    escribir(CLAVE_PEDIDOS, lista);
+  }
 
   // Crea un elemento con clase y texto opcionales.
   function crear(etiqueta, clase, texto) {
@@ -114,6 +138,8 @@
 
   window.Carrito = {
     PRECIO_ENVIO: PRECIO_ENVIO,
+    UNIDADES_ENVIO_GRATIS: UNIDADES_ENVIO_GRATIS,
+    DESCUENTO_PRIMERA_COMPRA: DESCUENTO_PRIMERA_COMPRA,
     MAX_UNIDADES: MAX_UNIDADES,
     obtener: obtener,
     unidades: unidades,
@@ -122,7 +148,8 @@
     cambiarCantidad: cambiarCantidad,
     vaciar: vaciar,
     establecerEntrega: establecerEntrega,
-    costeEnvio: costeEnvio,
+    esPrimeraCompra: esPrimeraCompra,
+    totales: totales,
     guardarPedido: guardarPedido,
     redondear: redondear,
     crear: crear,

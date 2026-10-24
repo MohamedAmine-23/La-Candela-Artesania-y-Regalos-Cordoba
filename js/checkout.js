@@ -11,6 +11,8 @@
   var formulario = document.getElementById("formulario-pedido");
   var lineasUl = document.getElementById("resumen-lineas");
   var tSubtotal = document.getElementById("total-subtotal");
+  var filaDescuento = document.getElementById("fila-descuento");
+  var tDescuento = document.getElementById("total-descuento");
   var tEnvio = document.getElementById("total-envio");
   var tTotal = document.getElementById("total-total");
   var textoEntrega = document.getElementById("resumen-entrega");
@@ -26,9 +28,8 @@
   };
 
   var lineas = [];
-  var subtotal = 0;
-  var envio = 0;
   var entrega = "envio";
+  var t = null;   // importes calculados (subtotal, descuento, envío, total)
 
   function calcular(catalogo) {
     var estado = Carrito.obtener();
@@ -38,8 +39,7 @@
       var p = catalogo[it.id];
       if (p && p.disponible) { lineas.push({ producto: p, cantidad: it.cantidad }); }
     });
-    subtotal = Carrito.redondear(lineas.reduce(function (t, l) { return t + l.producto.precio * l.cantidad; }, 0));
-    envio = Carrito.costeEnvio(entrega);
+    t = Carrito.totales(lineas, entrega);
   }
 
   function pintarResumen() {
@@ -50,9 +50,11 @@
       li.appendChild(crear("span", "", formato.format(Carrito.redondear(l.producto.precio * l.cantidad))));
       lineasUl.appendChild(li);
     });
-    tSubtotal.textContent = formato.format(subtotal);
-    tEnvio.textContent = envio === 0 ? "Gratis" : formato.format(envio);
-    tTotal.textContent = formato.format(Carrito.redondear(subtotal + envio));
+    tSubtotal.textContent = formato.format(t.subtotal);
+    filaDescuento.hidden = t.descuento === 0;
+    tDescuento.textContent = "\u2212" + formato.format(t.descuento);
+    tEnvio.textContent = t.envio === 0 ? "Gratis" : formato.format(t.envio);
+    tTotal.textContent = formato.format(t.total);
     textoEntrega.textContent = ENTREGAS[entrega];
 
     var aDomicilio = entrega === "envio";
@@ -78,10 +80,11 @@
     detalle.textContent = "";
     var filas = [
       ["Entrega", ENTREGAS[pedido.entrega]],
-      ["Pago", PAGOS[pedido.pago]],
-      ["Total", formato.format(pedido.total)]
+      ["Pago", PAGOS[pedido.pago]]
     ];
     if (pedido.entrega === "envio") { filas.splice(1, 0, ["Dirección", pedido.cliente.direccion]); }
+    if (pedido.descuento > 0) { filas.push(["Descuento primera compra (10 %)", "\u2212" + formato.format(pedido.descuento)]); }
+    filas.push(["Total", formato.format(pedido.total)]);
     filas.forEach(function (f) {
       var fila = crear("div");
       fila.appendChild(crear("dt", "", f[0]));
@@ -89,8 +92,7 @@
       detalle.appendChild(fila);
     });
 
-    var titulo = document.getElementById("titulo-confirmacion");
-    titulo.focus();
+    document.getElementById("titulo-confirmacion").focus();
     window.scrollTo(0, 0);
   }
 
@@ -112,9 +114,10 @@
       lineas: lineas.map(function (l) {
         return { id: l.producto.id, nombre: l.producto.nombre, precio: l.producto.precio, cantidad: l.cantidad };
       }),
-      subtotal: subtotal,
-      envio: envio,
-      total: Carrito.redondear(subtotal + envio)
+      subtotal: t.subtotal,
+      descuento: t.descuento,
+      envio: t.envio,
+      total: t.total
     };
     Carrito.guardarPedido(pedido);
     Carrito.vaciar();

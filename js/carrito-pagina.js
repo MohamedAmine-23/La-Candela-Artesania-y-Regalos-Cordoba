@@ -9,7 +9,10 @@
   var contenido = document.getElementById("carrito-contenido");
   var vacio = document.getElementById("carrito-vacio");
   var aviso = document.getElementById("carrito-aviso");
+  var avisoEnvio = document.getElementById("aviso-envio");
   var tSubtotal = document.getElementById("total-subtotal");
+  var filaDescuento = document.getElementById("fila-descuento");
+  var tDescuento = document.getElementById("total-descuento");
   var tEnvio = document.getElementById("total-envio");
   var tTotal = document.getElementById("total-total");
   var textoEnvio = document.getElementById("texto-envio");
@@ -76,6 +79,13 @@
     return li;
   }
 
+  function textoAvisoEnvio(t, entrega) {
+    if (entrega !== "envio") { return ""; }
+    if (t.envioGratis) { return "¡Tienes el envío gratis!"; }
+    var faltan = Carrito.UNIDADES_ENVIO_GRATIS - t.unidades;
+    return "Añade " + faltan + (faltan === 1 ? " unidad más" : " unidades más") + " y el envío será gratis.";
+  }
+
   function pintar() {
     var estado = Carrito.obtener();
     var lineas = [];
@@ -101,18 +111,16 @@
     contenido.hidden = false;
 
     lineasUl.textContent = "";
-    var subtotal = 0;
-    lineas.forEach(function (l) {
-      lineasUl.appendChild(linea(l));
-      subtotal += l.producto.precio * l.cantidad;
-    });
-    subtotal = Carrito.redondear(subtotal);
+    lineas.forEach(function (l) { lineasUl.appendChild(linea(l)); });
 
-    var envio = Carrito.costeEnvio(estado.entrega);
-    tSubtotal.textContent = formato.format(subtotal);
-    tEnvio.textContent = envio === 0 ? "Gratis" : formato.format(envio);
-    tTotal.textContent = formato.format(Carrito.redondear(subtotal + envio));
-    textoEnvio.textContent = formato.format(Carrito.PRECIO_ENVIO);
+    var t = Carrito.totales(lineas, estado.entrega);
+    tSubtotal.textContent = formato.format(t.subtotal);
+    filaDescuento.hidden = t.descuento === 0;
+    tDescuento.textContent = "\u2212" + formato.format(t.descuento);
+    tEnvio.textContent = t.envio === 0 ? "Gratis" : formato.format(t.envio);
+    tTotal.textContent = formato.format(t.total);
+    textoEnvio.textContent = formato.format(Carrito.PRECIO_ENVIO) + " (gratis desde " + Carrito.UNIDADES_ENVIO_GRATIS + " unidades)";
+    avisoEnvio.textContent = textoAvisoEnvio(t, estado.entrega);
     Array.prototype.forEach.call(radios, function (r) { r.checked = r.value === estado.entrega; });
 
     if (enfoque) {
