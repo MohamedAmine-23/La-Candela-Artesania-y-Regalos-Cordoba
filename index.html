@@ -67,63 +67,9 @@
       <h2 id="titulo-novedades">Novedades</h2>
       <p class="seccion-intro">Las últimas piezas que han llegado a la tienda.</p>
 
-      <!--
-        PRODUCTOS DE EJEMPLO.
-        En el Sprint 1 se sustituirán por los productos reales del archivo de datos (data/productos.json)
-        y los recuadros provisionales por las fotos de cada producto.
-      -->
-      <ul class="productos">
-        <li class="producto">
-          <div class="foto-provisional" role="img" aria-label="Foto del producto pendiente">Foto provisional</div>
-          <div class="producto-cuerpo">
-            <h3>Taza de cerámica esmaltada</h3>
-            <p class="producto-desc">Cerámica artesanal con esmalte azul.</p>
-            <div class="producto-datos">
-              <span class="precio">16,00 €</span>
-              <span class="estado">Disponible</span>
-            </div>
-            <a class="producto-enlace" href="producto.html?id=1">Ver producto</a>
-          </div>
-        </li>
-
-        <li class="producto">
-          <div class="foto-provisional" role="img" aria-label="Foto del producto pendiente">Foto provisional</div>
-          <div class="producto-cuerpo">
-            <h3>Cartera de cuero</h3>
-            <p class="producto-desc">Marroquinería cosida con cuidado.</p>
-            <div class="producto-datos">
-              <span class="precio">29,00 €</span>
-              <span class="estado">Disponible</span>
-            </div>
-            <a class="producto-enlace" href="producto.html?id=2">Ver producto</a>
-          </div>
-        </li>
-
-        <li class="producto">
-          <div class="foto-provisional" role="img" aria-label="Foto del producto pendiente">Foto provisional</div>
-          <div class="producto-cuerpo">
-            <h3>Llavero personalizado</h3>
-            <p class="producto-desc">Con el nombre o la frase que quieras.</p>
-            <div class="producto-datos">
-              <span class="precio">8,50 €</span>
-              <span class="estado">Disponible</span>
-            </div>
-            <a class="producto-enlace" href="producto.html?id=3">Ver producto</a>
-          </div>
-        </li>
-
-        <li class="producto">
-          <div class="foto-provisional" role="img" aria-label="Foto del producto pendiente">Foto provisional</div>
-          <div class="producto-cuerpo">
-            <h3>Plato decorativo</h3>
-            <p class="producto-desc">Pieza de cerámica pintada a mano.</p>
-            <div class="producto-datos">
-              <span class="precio">22,00 €</span>
-              <span class="estado estado-agotado">Agotado</span>
-            </div>
-            <a class="producto-enlace" href="producto.html?id=4">Ver producto</a>
-          </div>
-        </li>
+      <!-- Las novedades se pintan desde data/productos.json (js/portada.js) -->
+      <ul class="productos" id="lista-novedades">
+        <li class="mensaje">Cargando novedades…</li>
       </ul>
 
       <p class="ver-todo"><a href="catalogo.html">Ver todos los productos</a></p>
@@ -156,5 +102,6 @@
   </footer>
   <script src="js/carrito.js"></script>
   <script src="js/tienda.js"></script>
+  <script src="js/portada.js"></script>
 </body>
 </html>
