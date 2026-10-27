@@ -70,16 +70,6 @@ La dueña de la tienda no tiene conocimientos técnicos: vende en su tienda fís
 - **Reseñas:** cada producto muestra la media de estrellas y sus opiniones. Cualquier visitante puede escribir la suya con un formulario.
 - **Pedido:** al confirmar, la web muestra un número de pedido de prueba y guarda el pedido en el navegador.
 
-## Planificación Scrum
-
-La planificación (Sprints, Sprint Backlog, reuniones, revisión y retrospectiva) está en el Excel del proyecto. Resumen:
-
-| Sprint | Duración | Objetivo |
-|---|---|---|
-| Sprint 1 | 3 semanas | Ver el catálogo con disponibilidad, filtrar por categoría y abrir la ficha de cada producto |
-| Sprint 2 | 3 semanas | Carrito, formulario de pedido y opciones de entrega |
-| Sprint 3 | 3 semanas | Buscador, panel de administración simple y pago simulado |
-
 ## Tecnologías
 
 - **HTML** y **CSS** para las páginas.
