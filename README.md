@@ -23,10 +23,10 @@ Trabajamos con la metodología **Scrum**. Los roles organizan el trabajo, pero t
 |---|---|---|
 | Juan Rosa | Product Owner | Representa a la dueña de la tienda, ordena el Product Backlog y aporta el contenido de ejemplo |
 | Ángel Castro | Scrum Master | Facilita las reuniones y ayuda a quitar impedimentos |
-| Mohamed Amine El Harchal | Desarrollador/a | Diseño y maquetación del catálogo |
-| Eduardo Ibarra | Desarrollador/a | Archivo de datos de productos y pruebas |
-| Adrián Rodríguez | Desarrollador/a | Filtros por categoría |
-| Olga Lara | Desarrollador/a | Ficha de detalle del producto |
+| Mohamed Amine El Harchal | Desarrollador/a | Hacer la pagina y preparar el github |
+| Eduardo Ibarra | Desarrollador/a | Hacer la pagina |
+| Adrián Rodríguez | Desarrollador/a | Obtener productos y sus imagenes |
+| Olga Lara | Desarrollador/a | Obtener productos y sus imagenes |
 
 ## Requisitos de la clienta y estado
 
