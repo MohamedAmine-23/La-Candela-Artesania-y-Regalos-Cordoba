@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://api.github.com; base-uri 'none'; form-action 'self'">
+  <title>Panel de administración · LaCandela</title>
+  <link rel="icon" type="image/svg+xml" href="img/icono.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera-interior">
+      <a class="marca" href="index.html" aria-label="LaCandela, volver a la tienda">
+        <img src="img/icono.svg" alt="" width="26" height="43">
+        <span class="marca-nombre">LaCandela</span>
+        <span class="marca-lema">Panel de administración</span>
+      </a>
+      <nav aria-label="Administración">
+        <ul class="menu">
+          <li><a href="index.html">Volver a la tienda</a></li>
+          <li><button type="button" class="enlace-boton" id="boton-salir" hidden>Cerrar sesión</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="contenedor seccion">
+    <h1 class="titulo-pagina">Panel de administración</h1>
+
+    <!-- Acceso -->
+    <section id="acceso" class="checkout" aria-labelledby="titulo-acceso">
+      <h2 id="titulo-acceso" class="sr-only">Acceso</h2>
+      <p class="aviso-prototipo"><strong>Prototipo:</strong> para entrar hace falta un <em>token de acceso de GitHub</em> del repositorio. No está guardado en ningún archivo: se pega aquí y solo se mantiene mientras esta pestaña esté abierta.</p>
+      <form id="form-acceso" class="formulario">
+        <div class="campo">
+          <label for="token">Token de GitHub</label>
+          <input id="token" name="token" type="password" autocomplete="off" spellcheck="false" required>
+          <p class="ayuda">Permiso necesario: <em>Contents: Read and write</em>, solo para este repositorio.</p>
+        </div>
+        <button class="boton" type="submit">Entrar</button>
+        <p class="ayuda" id="acceso-error" role="alert"></p>
+      </form>
+    </section>
+
+    <!-- Panel (solo se ve tras entrar) -->
+    <div id="panel" hidden>
+
+      <section aria-labelledby="titulo-productos">
+        <h2 id="titulo-productos">Productos</h2>
+        <p class="seccion-intro">Cambia el precio o la disponibilidad, o borra un producto. Los cambios no se aplican hasta que pulses «Guardar cambios en GitHub».</p>
+
+        <div class="tabla-admin-envoltura">
+          <table class="tabla-admin">
+            <thead>
+              <tr>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio (€)</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-productos"></tbody>
+          </table>
+        </div>
+
+        <div class="admin-barra">
+          <button class="boton" type="button" id="boton-guardar" disabled>Guardar cambios en GitHub</button>
+          <p class="ayuda" id="aviso-productos" role="status"></p>
+        </div>
+      </section>
+
+      <section class="admin-seccion" aria-labelledby="titulo-nuevo">
+        <h2 id="titulo-nuevo">Añadir un producto nuevo</h2>
+        <p class="seccion-intro">Las fotos hay que subirlas antes a la carpeta <code>img/productos/</code> del repositorio. Aquí solo se escribe su ruta.</p>
+
+        <form id="form-nuevo" class="formulario">
+          <div class="rejilla-formulario">
+            <div class="campo">
+              <label for="nuevo-nombre">Nombre</label>
+              <input id="nuevo-nombre" name="nombre" type="text" maxlength="80" required>
+            </div>
+            <div class="campo">
+              <label for="nuevo-categoria">Categoría</label>
+              <select id="nuevo-categoria" name="categoria" required>
+                <option value="Cerámica">Cerámica</option>
+                <option value="Cuero">Cuero</option>
+                <option value="Regalos Personalizados">Regalos Personalizados</option>
+                <option value="Novedades">Novedades</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label for="nuevo-precio">Precio (€)</label>
+              <input id="nuevo-precio" name="precio" type="number" min="0" step="0.01" required>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="nuevo-corta">Descripción corta</label>
+            <input id="nuevo-corta" name="descripcionCorta" type="text" maxlength="80" required>
+          </div>
+          <div class="campo">
+            <label for="nuevo-descripcion">Descripción completa</label>
+            <textarea id="nuevo-descripcion" name="descripcion" rows="3" maxlength="400" required></textarea>
+          </div>
+
+          <div class="rejilla-formulario">
+            <div class="campo">
+              <label for="nuevo-foto1">Foto 1 (principal)</label>
+              <input id="nuevo-foto1" name="foto1" type="text" placeholder="img/productos/vela.png">
+            </div>
+            <div class="campo">
+              <label for="nuevo-foto2">Foto 2</label>
+              <input id="nuevo-foto2" name="foto2" type="text" placeholder="img/productos/vela2.png">
+            </div>
+            <div class="campo">
+              <label for="nuevo-foto3">Foto 3</label>
+              <input id="nuevo-foto3" name="foto3" type="text" placeholder="img/productos/vela3.png">
+            </div>
+          </div>
+          <p class="ayuda">Si no pones foto, el producto saldrá con un recuadro provisional.</p>
+
+          <label class="campo-casilla">
+            <input id="nuevo-disponible" name="disponible" type="checkbox" checked>
+            Disponible
+          </label>
+
+          <button class="boton" type="submit">Añadir a la lista</button>
+          <p class="ayuda" id="aviso-nuevo" role="status"></p>
+        </form>
+      </section>
+
+      <section class="admin-seccion" aria-labelledby="titulo-pedidos">
+        <h2 id="titulo-pedidos">Pedidos</h2>
+        <p class="aviso-prototipo"><strong>Importante:</strong> aquí solo aparecen los pedidos hechos desde <em>este mismo navegador</em> (por ejemplo, los de prueba del equipo). Los pedidos de otras personas no llegan al panel, porque la web no tiene servidor.</p>
+
+        <p class="mensaje" id="pedidos-vacio" hidden>Todavía no hay pedidos en este navegador.</p>
+
+        <div class="tabla-admin-envoltura">
+          <table class="tabla-admin">
+            <thead>
+              <tr>
+                <th scope="col">Pedido</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Productos</th>
+                <th scope="col">Entrega</th>
+                <th scope="col">Total</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-pedidos"></tbody>
+          </table>
+        </div>
+        <p class="ayuda" id="aviso-pedidos" role="status"></p>
+      </section>
+
+    </div>
+
+    <noscript>
+      <p class="mensaje">Necesitas activar JavaScript para usar el panel.</p>
+    </noscript>
+  </main>
+
+  <footer class="contenedor pie">
+    <p class="pie-nombre">LaCandela - Artesania y regalos Córdoba</p>
+    <p>Proyecto educativo · IES Fidiana · 1.º CFGS Desarrollo de Aplicaciones Web</p>
+  </footer>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
