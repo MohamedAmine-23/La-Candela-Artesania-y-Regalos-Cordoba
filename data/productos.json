@@ -171,7 +171,7 @@
     "descripcionCorta": "Una vela para dar calor a tu casa.",
     "descripcion": "Vela artesanal en un vaso de cerámica que puedes reutilizar cuando se acabe.",
     "precio": 12,
-    "disponible": false,
+    "disponible": true,
     "imagen": "img/productos/vela.png",
     "imagenes": [
       "img/productos/vela.png",
