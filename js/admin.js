@@ -79,12 +79,18 @@
     return e instanceof TypeError ? "No se ha podido conectar con GitHub. Comprueba tu conexión." : e.message;
   }
 
+  // Si GitHub responde con error, lanza un mensaje claro con lo que dice GitHub.
+  function revisar(r) {
+    if (r.ok) { return r.json(); }
+    return r.json().catch(function () { return {}; }).then(function (cuerpo) {
+      var extra = cuerpo && cuerpo.message ? " (GitHub dice: " + cuerpo.message + ")" : "";
+      throw new Error(describirError(r.status) + extra);
+    });
+  }
+
   function cargarProductos() {
     return fetch(URL_API + "?ref=" + encodeURIComponent(RAMA), { headers: cabeceras(), cache: "no-store" })
-      .then(function (r) {
-        if (!r.ok) { throw new Error(describirError(r.status)); }
-        return r.json();
-      })
+      .then(revisar)
       .then(function (archivo) {
         var datos = JSON.parse(decodificar(archivo.content));
         if (!Array.isArray(datos)) { throw new Error("El archivo de productos no tiene el formato esperado."); }
@@ -94,6 +100,10 @@
   }
 
   function guardar() {
+    if (!sinGuardar) {
+      avisoProductos.textContent = "No hay cambios que guardar. Cambia un precio o un estado, o añade o borra un producto.";
+      return;
+    }
     botonGuardar.disabled = true;
     avisoProductos.textContent = "Guardando en GitHub…";
 
@@ -107,13 +117,11 @@
     });
 
     fetch(URL_API, { method: "PUT", headers: cab, body: cuerpo })
-      .then(function (r) {
-        if (!r.ok) { throw new Error(describirError(r.status)); }
-        return r.json();
-      })
+      .then(revisar)
       .then(function (res) {
         sha = res.content.sha;
         sinGuardar = false;
+        botonGuardar.disabled = false;
         avisoProductos.textContent = "Guardado en GitHub. La web se actualizará en uno o dos minutos; en los navegadores que ya la tenían abierta puede tardar algo más.";
       })
       .catch(function (e) {
@@ -125,7 +133,6 @@
   /* ---------- Productos ---------- */
   function marcarCambios() {
     sinGuardar = true;
-    botonGuardar.disabled = false;
     avisoProductos.textContent = "Hay cambios sin guardar.";
   }
 
@@ -156,17 +163,24 @@
       precio.step = "0.01";
       precio.value = String(p.precio);
       precio.setAttribute("aria-label", "Precio de " + p.nombre);
-      precio.addEventListener("change", function () {
+      function aplicarPrecio(normalizar) {
         var v = Number(precio.value);
         if (precio.value === "" || !isFinite(v) || v < 0) {
-          precio.value = String(p.precio);
-          avisoProductos.textContent = "El precio tiene que ser un número igual o mayor que 0.";
+          if (normalizar) {
+            precio.value = String(p.precio);
+            avisoProductos.textContent = "El precio tiene que ser un número igual o mayor que 0.";
+          }
           return;
         }
-        p.precio = Math.round(v * 100) / 100;
-        precio.value = String(p.precio);
-        marcarCambios();
-      });
+        var nuevoPrecio = Math.round(v * 100) / 100;
+        if (nuevoPrecio !== p.precio) {
+          p.precio = nuevoPrecio;
+          marcarCambios();
+        }
+        if (normalizar) { precio.value = String(p.precio); }
+      }
+      precio.addEventListener("input", function () { aplicarPrecio(false); });
+      precio.addEventListener("change", function () { aplicarPrecio(true); });
       celdaPrecio.appendChild(precio);
       fila.appendChild(celdaPrecio);
 
