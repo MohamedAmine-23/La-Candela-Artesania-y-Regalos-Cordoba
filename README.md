@@ -4,6 +4,7 @@ Proyecto del módulo **Entornos de Desarrollo** · 1.º CFGS Desarrollo de Aplic
 
 🌐 **Web publicada:** [https://mohamedamine-23.github.io/La-Candela-Artesania-y-Regalos-Cordoba/](https://mohamedamine-23.github.io/La-Candela-Artesania-y-Regalos-Cordoba/)
 
+🌐 **Web administrador:** [https://mohamedamine-23.github.io/La-Candela-Artesania-y-Regalos-Cordoba/admin.html](https://mohamedamine-23.github.io/La-Candela-Artesania-y-Regalos-Cordoba/admin.html)
 ---
 
 ## ¿Qué es LaCandela Online?
