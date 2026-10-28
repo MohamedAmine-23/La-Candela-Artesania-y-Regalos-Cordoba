@@ -4,7 +4,7 @@ Proyecto del módulo **Entornos de Desarrollo** · 1.º CFGS Desarrollo de Aplic
 
 🌐 **Web publicada:** [https://mohamedamine-23.github.io/La-Candela-Artesania-y-Regalos-Cordoba/](https://mohamedamine-23.github.io/La-Candela-Artesania-y-Regalos-Cordoba/)
 
-🌐 **Web administrador:** [https://mohamedamine-23.github.io/La-Candela-Artesania-y-Regalos-Cordoba/admin.html](https://mohamedamine-23.github.io/La-Candela-Artesania-y-Regalos-Cordoba/admin.html)
+🔐 **Panel de administración:** [https://mohamedamine-23.github.io/La-Candela-Artesania-y-Regalos-Cordoba/admin.html](https://mohamedamine-23.github.io/La-Candela-Artesania-y-Regalos-Cordoba/admin.html) (hace falta un token de GitHub, ver [Panel de administración](#panel-de-administración))
 
 ---
 
@@ -25,10 +25,10 @@ Trabajamos con la metodología **Scrum**. Los roles organizan el trabajo, pero t
 |---|---|---|
 | Juan Rosa | Product Owner | Representa a la dueña de la tienda, ordena el Product Backlog y aporta el contenido de ejemplo |
 | Ángel Castro | Scrum Master | Facilita las reuniones y ayuda a quitar impedimentos |
-| Mohamed Amine El Harchal | Desarrollador/a | Hacer la pagina y preparar el github |
-| Eduardo Ibarra | Desarrollador/a | Hacer la pagina |
-| Adrián Rodríguez | Desarrollador/a | Obtener productos y sus imagenes |
-| Olga Lara | Desarrollador/a | Obtener productos y sus imagenes |
+| Mohamed Amine El Harchal | Desarrollador/a | Hacer la página y preparar el GitHub |
+| Eduardo Ibarra | Desarrollador/a | Hacer la página |
+| Adrián Rodríguez | Desarrollador/a | Obtener productos y sus imágenes |
+| Olga Lara | Desarrollador/a | Obtener productos y sus imágenes |
 
 ## Requisitos de la clienta y estado
 
@@ -50,7 +50,7 @@ La dueña de la tienda no tiene conocimientos técnicos: vende en su tienda fís
 | # | Requisito | Estado |
 |---|---|---|
 | 7 | **Buscador de productos:** barra de búsqueda en la cabecera por palabra clave | ✅ Hecho |
-| 8 | **Panel de administración simple:** añadir productos, cambiar precios y marcar pedidos como «Enviados» | ⏳ Pendiente |
+| 8 | **Panel de administración simple:** añadir productos, cambiar precios y disponibilidad, borrar productos y marcar pedidos como «Enviados» | ✅ Hecho (con limitaciones, ver más abajo) |
 | 9 | **Pago simulado:** simulación de pago con tarjeta o Bizum | ⏳ Pendiente (ahora solo se elige el método de pago) |
 
 ### Prioridad baja · futuras versiones
@@ -71,13 +71,34 @@ La dueña de la tienda no tiene conocimientos técnicos: vende en su tienda fís
 - **Favoritos:** el corazón de cada producto guarda el favorito; la página «Favoritos» los muestra todos.
 - **Reseñas:** cada producto muestra la media de estrellas y sus opiniones. Cualquier visitante puede escribir la suya con un formulario.
 - **Pedido:** al confirmar, la web muestra un número de pedido de prueba y guarda el pedido en el navegador.
+- **Panel de administración:** la página `admin.html` permite gestionar los productos y los pedidos de prueba. Ver [Panel de administración](#panel-de-administración).
+
+## Panel de administración
+
+La página [`admin.html`](https://mohamedamine-23.github.io/La-Candela-Artesania-y-Regalos-Cordoba/admin.html) no tiene enlace desde la tienda: se entra escribiendo su dirección o desde este README. Permite:
+
+- **Cambiar el precio y la disponibilidad** (Disponible / Agotado) de un producto.
+- **Añadir productos nuevos** (nombre, categoría, precio, descripciones y rutas de las fotos).
+- **Borrar productos.**
+- **Ver los pedidos hechos en ese navegador** y marcarlos como «Enviado».
+
+**Cómo guarda los cambios:** al pulsar «Guardar cambios en GitHub», el panel actualiza el archivo `data/productos.json` del repositorio mediante la API de GitHub. GitHub Pages republica la web en uno o dos minutos.
+
+**Cómo se entra:** hace falta un *token de acceso de GitHub* (fine-grained) del repositorio, con el permiso **Contents: Read and write** y una caducidad corta.
+
+- El token **no está guardado en ningún archivo ni en el código**: se pega al entrar y solo se mantiene mientras la pestaña esté abierta. Hay que pegarlo cada vez.
+- Quien tenga el token puede modificar el contenido del repositorio: **no se comparte ni se sube a GitHub**. Si se filtra, se revoca desde la configuración de GitHub.
+- Sin un token válido, el panel no puede cambiar nada, aunque la página sea pública.
+
+**Para crear el token** (lo hace la cuenta dueña del repositorio): *Settings > Developer settings > Personal access tokens > Fine-grained tokens > Generate new token*; en *Repository access* se elige solo este repositorio y en *Repository permissions > Contents* se elige *Read and write*.
 
 ## Tecnologías
 
 - **HTML** y **CSS** para las páginas.
-- **JavaScript** para la parte dinámica (catálogo, filtros, buscador, carrito, favoritos, reseñas…).
+- **JavaScript** para la parte dinámica (catálogo, filtros, buscador, carrito, favoritos, reseñas, panel de administración…).
 - **JSON** para los datos de productos y reseñas (la web no tiene servidor propio).
 - **localStorage** del navegador para el carrito, los favoritos, los pedidos y las reseñas de cada visitante.
+- **API de GitHub** para que el panel de administración guarde los productos en el repositorio.
 - **GitHub** para el código y **GitHub Pages** para publicar la web.
 
 ## Estructura del repositorio
@@ -90,6 +111,7 @@ La-Candela-Artesania-y-Regalos-Cordoba/
 ├── carrito.html          # Carrito y opciones de entrega
 ├── checkout.html         # Finalizar pedido
 ├── favoritos.html        # Lista de deseos
+├── admin.html            # Panel de administración (sin enlace desde la tienda)
 ├── css/
 │   └── estilos.css       # Estilos de toda la web
 ├── js/
@@ -100,7 +122,8 @@ La-Candela-Artesania-y-Regalos-Cordoba/
 │   ├── producto.js       # Ficha de producto y reseñas
 │   ├── carrito-pagina.js # Página del carrito
 │   ├── checkout.js       # Finalizar pedido
-│   └── favoritos-pagina.js # Página de favoritos
+│   ├── favoritos-pagina.js # Página de favoritos
+│   └── admin.js          # Panel de administración
 ├── data/
 │   ├── productos.json    # Datos de los productos
 │   └── resenas.json      # Reseñas de ejemplo
@@ -111,6 +134,10 @@ La-Candela-Artesania-y-Regalos-Cordoba/
 ```
 
 ## Cómo añadir o cambiar productos
+
+**Con el panel de administración** (lo más cómodo): se cambian precios y disponibilidad, se añaden o se borran productos desde `admin.html`. Las fotos de un producto nuevo hay que subirlas antes a `img/productos/`.
+
+**A mano, en GitHub:**
 
 1. **Fotos:** súbelas a `img/productos/`. Usa nombres en minúsculas, sin espacios ni tildes (por ejemplo, `vela.png`, `vela2.png`, `vela3.png`).
 2. **Datos:** edita `data/productos.json` y añade o modifica el producto con estos campos: `id`, `nombre`, `categoria`, `descripcionCorta`, `descripcion`, `precio`, `disponible` (`true` o `false`), `imagen` (foto principal) e `imagenes` (lista de hasta 3 fotos).
@@ -126,7 +153,8 @@ Como la web se publica en GitHub Pages, no tiene servidor ni base de datos:
 - **El descuento de primera compra** se calcula con los pedidos guardados en el navegador, así que no puede saber si el cliente ya compró desde otro dispositivo.
 - **Las reseñas:** las de `data/resenas.json` son de ejemplo y las ven todos los visitantes. Las que escribe cada visitante se guardan solo en su navegador y solo las ve esa persona.
 - **Favoritos y carrito** también son personales de cada navegador.
-- **El panel de administración** está pendiente y, sin servidor, solo podría funcionar como simulación.
+- **El panel de administración** cambia los productos para todos los visitantes (se guardan en GitHub), pero **solo muestra los pedidos hechos en el mismo navegador** donde se abre: los pedidos de otros clientes no llegan al panel.
+- **Los cambios del panel no se ven al instante:** GitHub Pages tarda uno o dos minutos en republicar y los navegadores que ya tenían la web abierta pueden tardar hasta unos 10 minutos.
 
 ## Cómo ver la web en tu ordenador
 
