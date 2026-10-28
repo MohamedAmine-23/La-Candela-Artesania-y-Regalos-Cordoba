@@ -174,13 +174,6 @@ Como la web se publica en GitHub Pages, no tiene servidor ni base de datos:
 5. **Revisión:** otra persona del equipo prueba el cambio y lo aprueba. Una tarea solo se considera **completada** cuando funciona y otra persona la ha probado.
 6. **Estado de las tareas:** cada responsable actualiza el estado en el Excel a diario.
 
-## Reuniones Scrum
-
-- **Planificación del Sprint:** al empezar cada Sprint.
-- **Reunión diaria:** máximo 15 minutos (qué hice, qué haré, qué problemas tengo).
-- **Revisión del Sprint:** al terminar, se enseña el resultado al Product Owner.
-- **Retrospectiva:** el equipo acuerda cómo mejorar en el siguiente Sprint.
-
 ---
 
 *Proyecto con fines educativos.*
